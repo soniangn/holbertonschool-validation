@@ -1,5 +1,3 @@
-module github.com/soniangn/holbertonschool-validation
+module github.com/soniangn/holbertonschool-validation/tree/master/module1_task0
 
 go 1.13
-
-require github.com/theNewDynamic/gohugo-theme-ananke v2.6.7+incompatible // indirect
