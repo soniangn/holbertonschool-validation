@@ -4,8 +4,7 @@ help: 		## Show this help
 
 .PHONY: build
 build:		## Compile source code of the application to a binary name awesome.api
-	@go mod init github.com/soniangn/awesome-api
-	@go build
+	@make lint && go build || exit -1
 
 .PHONY: run
 run:		## Run the application in background and write logs in awesome-api.log
