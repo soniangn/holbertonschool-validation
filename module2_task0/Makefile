@@ -20,7 +20,7 @@ clean:		## Stop the application and delete the binary awesome-api and the log fi
 	@make stop
 	@rm -f awesome-api awesome-api.log
 
-.PHONY: test
+.PHONY: test 
 test:	 	## Test
 	@curl http://localhost:9999
 	@curl http://localhost:9999/health
