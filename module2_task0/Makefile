@@ -1,3 +1,7 @@
+.PHONY: help
+help: 		## Show this help
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+
 .PHONY: build
 build:		## Compile source code of the application to a binary name awesome.api
 	@go mod init github.com/soniangn/awesome-api
@@ -20,7 +24,3 @@ clean:		## Stop the application and delete the binary awesome-api and the log fi
 test:	 	## Test
 	@curl http://localhost:9999
 	@curl http://localhost:9999/health
-
-.PHONY: help
-help: 		## Show this help
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'

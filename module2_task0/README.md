@@ -2,6 +2,13 @@
 
 ## Build an Application using Make
 
+## Prerequisites
+This project needs the following tools / services:
+* Golang in v1.15.*
+* NPM v7+ with NodeJS v14.* (stable)
+* Python 3 with pip module
+* golangci-lint
+
 ## Project Life-cycle
 The life-cycle of this project is the following:
 
