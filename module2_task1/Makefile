@@ -17,7 +17,7 @@ stop:		## Stop the application
 .PHONY: clean
 clean:		## Stop the application and delete the binary awesome-api and the log file awesome-api.log
 	@make stop
-	@rm -f awesome-api awesome-api.log
+	@rm -f awesome-api && rm -f awesome-api.log
 
 .PHONY: test 
 test:	 	## Test
