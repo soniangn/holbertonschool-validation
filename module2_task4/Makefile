@@ -28,4 +28,4 @@ check: 		## check the markdown's lint
 
 .PHONY: validate
 validate:  	## validate W3C
-	@-./w3c_validator.py ./dist/index.html || true
+	@python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html
