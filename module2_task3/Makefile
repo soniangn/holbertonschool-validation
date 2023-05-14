@@ -37,4 +37,5 @@ unit-tests: ## run unit tests
 
 .PHONY: integration-tests
 integration-tests:	## run integration tests
-	@go test -v -coverprofile=coverage-integrations.out
+	@go test -v -short -coverprofile=coverage-integrations.out
+
