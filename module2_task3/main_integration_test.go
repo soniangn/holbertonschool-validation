@@ -31,29 +31,29 @@ func Test_server(t *testing.T) {
       responseCode: 200,
       body:         "Hello Holberton!",
     },
-	{
+		{
       name:         "Health",
       URI:  "/health",
       responseCode: 200,
       body:         "ALIVE",
     },
-	{
+		{
       name:         "Mr Jones",
       URI:  "/hello?name=Mr Jones",
       responseCode: 400,
       body:         "400 Bad Request",
     },
-	{
+		{
       name:         "Hello nothing",
       URI:          "/hello?name=",
       responseCode: 400,
       body:         "",
     },
-	{
+		{
       name:         "Hello weird",
       URI:          "/hello?name=%%",
       responseCode: 200,
-      body:         "Hello Sonia!",
+      body:         "Hello Gab!",
     },
   }
 
