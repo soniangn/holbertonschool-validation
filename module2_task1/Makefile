@@ -13,7 +13,7 @@ run:		## Run the application in background and write logs in awesome-api.log
 
 .PHONY: stop
 stop:		## Stop the application
-	@kill "$(shell pgrep awesome-api)"
+	@pgrep awesome-api | xargs kill
 
 .PHONY: clean
 clean:		## Stop the application and delete the binary awesome-api and the log file awesome-api.log
