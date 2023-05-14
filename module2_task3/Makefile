@@ -1,41 +1,27 @@
-.PHONY: help
-help: 		## Show this help
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+help: ## Show command help
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/\##//'
 
-.PHONY: build
-build:		## Compile source code of the application to a binary name awesome.api
-	@go get github.com/gorilla/mux
+build: ## Compile source code of the application to a binary name awesome.api
 	@make lint >/dev/null 2>&1 && go build || exit -1
 
-.PHONY: run
-run:		## Run the application in background and write logs in awesome-api.log
+run: ## Run the application in background and write logs in awesome-api.log
 	@./awesome-api >./awesome-api.log 2>&1 &
 
-.PHONY: stop
-stop:		## Stop the application
+stop: ## Stop the application
 	@kill "$(shell pgrep awesome-api)" 2>/dev/null &
 
-.PHONY: clean
-clean:		## Stop the application and delete the binary awesome-api and the log file awesome-api.log
-	@make stop
-	@rm -f awesome-api && rm -f awesome-api.log
-	@rm -f coverage-integrations.out
-	@rm -f coverage-units.out
+clean: ## Stop the application and delete awesome-api and awesome.log
+	@make stop && rm -rf awesome-api awesome-api.log coverage-units.out coverage-integrations.out
 
-.PHONY: test 
-test:	 	## run tests
+test: ## Test to ensure expected beahaviour
 	@make unit-tests 
 	@make integration-tests
 
-.PHONY: lint
-lint:		## lint the source code
+lint: ## Test lint on the files
 	@golangci-lint run
 
-.PHONY: unit-tests
-unit-tests: ## run unit tests
+unit-tests: ## Run Golang uni tests
 	@go test -v -short -coverprofile=coverage-units.out
 
-.PHONY: integration-tests
-integration-tests:	## run integration tests
-	@go test -v -short -coverprofile=coverage-integrations.out
-
+integration-tests: ## Run Golang integration tests
+	@go test -v -coverprofile=coverage-integrations.out
