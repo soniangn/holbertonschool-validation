@@ -15,3 +15,4 @@
 * `make post`: Post a new blog post 
 * `make help`: Show the help usage
 * `make check`: check the markdown's lint
+* `make validate`: validate W3C
