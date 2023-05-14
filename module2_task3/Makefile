@@ -13,18 +13,18 @@ run:		## Run the application in background and write logs in awesome-api.log
 
 .PHONY: stop
 stop:		## Stop the application
-	@kill "$(shell pgrep awesome-api)"
+	@kill "$(shell pgrep awesome-api)" 2>/dev/null &
 
 .PHONY: clean
 clean:		## Stop the application and delete the binary awesome-api and the log file awesome-api.log
 	@make stop
 	@rm -f awesome-api && rm -f awesome-api.log
-	@rm coverage-integrations.out
-	@rm coverage-units.out
+	@rm -f coverage-integrations.out
+	@rm -f coverage-units.out
 
 .PHONY: test 
 test:	 	## run tests
-	@make unit-tests
+	@make unit-tests 
 	@make integration-tests
 
 .PHONY: lint
@@ -32,7 +32,7 @@ lint:		## lint the source code
 	@golangci-lint run
 
 .PHONY: unit-tests
-unit-tests: 		## run unit tests
+unit-tests: ## run unit tests
 	@go test -v -short -coverprofile=coverage-units.out
 
 .PHONY: integration-tests
