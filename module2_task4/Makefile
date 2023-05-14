@@ -27,5 +27,5 @@ check: 		## check the markdown's lint
 	@markdownlint -f ./content/posts/*.md && markdown-link-check ./content/posts/*.md
 
 .PHONY: validate
-validate  	## validate W3C
-	./w3c_validator.py ./dist/index.html
+validate:  	## validate W3C
+	@-./w3c_validator.py ./dist/index.html
