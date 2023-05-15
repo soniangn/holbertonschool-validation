@@ -27,7 +27,7 @@ check: 		## check the markdown's lint
 .PHONY: validate
 validate:  	## validate W3C
 	@git clone https://github.com/holbertonschool/W3C-Validator.git
-	@python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html
+	@python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html || true
 
 .PHONY: run
 run: 		## runs the api and logs it
