@@ -1,6 +1,6 @@
 ---
 name: Hugo workflow
-on:   # yamllint disable-line rule:truthy
+"on":
   push:
     schedule:
     - cron: '0 0 * * *'   # runs every day at 00:00
