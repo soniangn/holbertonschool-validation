@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: ''
+          repository: '/module3_task1'
       - name: run setup.sh
         run: ./setup.sh
       - name: Display help
