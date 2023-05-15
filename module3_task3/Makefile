@@ -51,7 +51,7 @@ integration-tests:	## run integration tests
 	@go test -v -coverprofile=coverage-integrations.out
 
 .PHONY: package
-package: 	## produce a file awesome-website.zip
+package: 	## produce a file awesome-website.zip 
 	zip -r awesome-website.zip awesome-api dist/*
 
 .PHONY: lint
