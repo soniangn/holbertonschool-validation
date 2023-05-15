@@ -52,7 +52,7 @@ integration-tests:	## run integration tests
 
 .PHONY: package
 package: 	## produce a file awesome-website.zip
-	zip awesome-website.zip awesome-api dist/*
+	zip -r awesome-website.zip awesome-api dist/*
 
 .PHONY: lint
 lint:		## lint the files
