@@ -1,5 +1,5 @@
 ---
-name: Hugo workflow
+name: module3_task0
 on:   # yamllint disable-line rule:truthy
   push:
   schedule:
