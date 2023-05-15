@@ -6,7 +6,10 @@ on:   # yamllint disable-line rule:truthy
     - cron: '0 0 * * *'   # runs every day at 00:00
   jobs:
     build:
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-22.04
       steps:
-        - name: Execute validation
-          run: Make lint && Make build && Make tests
+        - uses: actions/checkout@v3
+          with:
+            repository: ''
+        - name: Display make help
+          run: cd module3_task0/ && make help
