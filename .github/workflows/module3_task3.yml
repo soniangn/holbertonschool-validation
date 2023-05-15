@@ -13,18 +13,18 @@ jobs:
         with:
           repository: ''
       - name: run setup.sh
-        run: ./module3_task2/setup.sh
+        run: ./module3_task3/setup.sh
       - name: build
-        run: cd module3_task2/ && make build
+        run: cd module3_task3/ && make build
       - name: run
-        run: cd module3_task2/ && make run
+        run: cd module3_task3/ && make run
       - name: unit-tests
         run: |
-          cd module3_task2/ && go mod init module3_task2 \
+          cd module3_task3/ && go mod init module3_task3 \
           && go get github.com/gorilla/mux && make unit-tests
       - name: integration-tests
         run: |
-          cd module3_task2/ \
+          cd module3_task3/ \
           && go get github.com/gorilla/mux && make integration-tests
       - name: lint
         run: cd module3_task2/ && make lint
@@ -53,10 +53,10 @@ jobs:
       - name: tests
         id: pass_test
         run: |
-          cd module3_task2/ && go mod init module3_task2
+          cd module3_task3/ && go mod init module3_task3
           go get github.com/gorilla/mux && make test
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
           name: package-zip
-          path: module3_task2/awesome-website.zip
+          path: module3_task3/awesome-website.zip
