@@ -4,7 +4,6 @@ on:   # yamllint disable-line rule:truthy
   push:
   schedule:
     - cron: '0 0 * * *'   # runs every day at 00:00
-
 jobs:
   build:
     runs-on: ubuntu-22.04
