@@ -18,10 +18,10 @@ jobs:
       - name: Display help
         run: cd module3_task1/ && make help
       - name: build
-        run: cd module3_task1/ && make build
+        run: make build
       - name: run
-        run: cd module3_task1/ && make run
+        run: make run
       - name: post
-        run: cd module3_task1/ && make POST_NAME=who-are-we POST_TITLE="Who are we" post
+        run: make POST_NAME=who-are-we POST_TITLE="Who are we" post
       - name: Clean
-        run: cd module3_task1/ && make clean
+        run: make clean
