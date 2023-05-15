@@ -1,0 +1,11 @@
+---
+name: Hugo workflow
+on: [push]  # yamllint disable-line rule:truthy
+  schedule:
+  - cron: '0 0 * * *'   # runs every day at 00:00
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute validation
+        run: Make lint && Make build && Make tests
