@@ -20,8 +20,8 @@ jobs:
       - name: build
         run: cd module3_task1/ && make build
       - name: run
-        run: make run
+        run: cd module3_task1/ && make run
       - name: post
-        run: make POST_NAME=who-are-we POST_TITLE="Who are we" post
+        run: cd module3_task1/ && make POST_NAME=who-are-we POST_TITLE="Who are we" post
       - name: Clean
-        run: make clean
+        run: cd module3_task1/ && make clean
