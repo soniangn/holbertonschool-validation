@@ -12,3 +12,5 @@ Application log are in the awesome-api.log
 
 ## How to “quickly” verify that the application is running (healthcheck)?
 make test
+
+## Tag
