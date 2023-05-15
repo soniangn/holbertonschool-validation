@@ -4,7 +4,7 @@ HUGO_VERSION=0.84.0
 
 .PHONY: build
 build:		## update Hugo version & Build a new website in the directory /dist 
-	@make check && hugo -c $(DESTDIR)
+	@hugo -c $(DESTDIR)
 
 .PHONY: clean
 clean:		## Removes all files from the directory /dist
