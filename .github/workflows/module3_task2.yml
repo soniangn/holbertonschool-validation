@@ -14,8 +14,6 @@ jobs:
           repository: ''
       - name: run setup.sh
         run: ./module3_task2/setup.sh
-      - name: Display help
-        run: cd module3_task2/ && make help
       - name: build
         run: cd module3_task2/ && make build
       - name: run
@@ -24,6 +22,10 @@ jobs:
         run: |
           cd module3_task2/ && go mod init module3_task2 \
           && go get github.com/gorilla/mux && make unit-tests
+      - name: integration-tests
+        run: |
+          cd module3_task2/ && go mod init module3_task2 \
+          && go get github.com/gorilla/mux && make integration-tests
       - name: lint
         run: cd module3_task2/ && make lint
 
