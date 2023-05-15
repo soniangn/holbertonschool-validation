@@ -35,7 +35,7 @@ jobs:
           repository: ''
       - name: tests
         id: pass_test
-        run: cd module3_task2/ && go mod init && make test
+        run: cd module3_task2/ && go mod init ./module3_task2 && make test
       - name: zip package if pass 
         run: if [[ ${{ steps.pass_test.result }} == "ok"]]; then make package; fi
       - name: Archive production artifacts

@@ -9,7 +9,7 @@ build:		## update Hugo version & Build a new website in the directory /dist
 .PHONY: clean
 clean:		## Removes all files from the directory /dist
 	rm -Rf $(DESTDIR)/*
-	rm ./awesome-website.zip
+	rm -f ./awesome-website.zip
 
 .PHONY: post
 post:		## Post a new blog post 
