@@ -28,6 +28,8 @@ jobs:
           && go get github.com/gorilla/mux && make integration-tests
       - name: lint
         run: cd module3_task2/ && make lint
+      - name: validate
+        run: cd module3_task2/ && make validate
 
   prod-checks:
     runs-on: ubuntu-22.04
