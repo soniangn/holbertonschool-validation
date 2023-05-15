@@ -4,9 +4,6 @@ HUGO_VERSION=0.84.0
 
 .PHONY: build
 build:		## update Hugo version & Build a new website in the directory /dist 
-	curl -L https://github.com/gohugoio/hugo/releases/download/v0.84.0/hugo_extended_0.84.0_Linux-64bit.deb -o hugo.deb
-	apt install ./hugo.deb
-	rm hugo.deb
 	@make check && hugo -c $(DESTDIR)
 
 .PHONY: clean
