@@ -18,7 +18,7 @@ jobs:
       - name: Display help
         run: cd module3_task1/ && make help
       - name: build
-        run: make build
+        run: cd module3_task1/ && make build
       - name: run
         run: make run
       - name: post
