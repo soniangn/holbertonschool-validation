@@ -24,7 +24,7 @@ jobs:
           && go get github.com/gorilla/mux && make unit-tests
       - name: integration-tests
         run: |
-          cd module3_task2/ && go mod init module3_task2 \
+          cd module3_task2/ \
           && go get github.com/gorilla/mux && make integration-tests
       - name: lint
         run: cd module3_task2/ && make lint
