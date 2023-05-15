@@ -26,3 +26,11 @@ check: 		## check the markdown's lint
 .PHONY: validate
 validate:  	## validate W3C
 	@python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html
+
+.PHONY: run
+run: 		## runs the api and logs it
+	./awesome-api > ./awesome-api.log 2>&1 &
+
+.PHONY: stop
+stop: 		## kills the process with PID name
+	pkill awesome-api
