@@ -23,8 +23,8 @@ jobs:
       - name: post
         run: cd module3_task2/ && make \
              POST_NAME=who-are-we POST_TITLE="Who are we" post
-      - name: clean
-        run: cd module3_task2/ && make clean
+      - name: lint
+        run: cd module3_task2/ && make lint
 
   prod-checks:
     runs-on: ubuntu-22.04
