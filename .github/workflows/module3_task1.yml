@@ -22,6 +22,7 @@ jobs:
       - name: run
         run: cd module3_task1/ && make run
       - name: post
-        run: cd module3_task1/ && make POST_NAME=who-are-we POST_TITLE="Who are we" post
-      - name: Clean
+        run: cd module3_task1/ && make \
+             POST_NAME=who-are-we POST_TITLE="Who are we" post
+      - name: clean
         run: cd module3_task1/ && make clean
