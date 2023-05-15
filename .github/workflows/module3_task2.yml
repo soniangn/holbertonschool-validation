@@ -13,18 +13,18 @@ jobs:
         with:
           repository: ''
       - name: run setup.sh
-        run: ./module3_task1/setup.sh
+        run: ./module3_task2/setup.sh
       - name: Display help
-        run: cd module3_task1/ && make help
+        run: cd module3_task2/ && make help
       - name: build
-        run: cd module3_task1/ && make build
+        run: cd module3_task2/ && make build
       - name: run
-        run: cd module3_task1/ && make run
+        run: cd module3_task2/ && make run
       - name: post
-        run: cd module3_task1/ && make \
+        run: cd module3_task2/ && make \
              POST_NAME=who-are-we POST_TITLE="Who are we" post
       - name: clean
-        run: cd module3_task1/ && make clean
+        run: cd module3_task2/ && make clean
 
   prod-checks:
     runs-on: ubuntu-22.04
@@ -35,7 +35,7 @@ jobs:
           repository: ''
       - name: tests
         id: pass_test
-        run: cd module3_task2/ && make test
+        run: cd module3_task2/ && go mod init && make test
       - name: zip package if pass 
         run: if [[ ${{ steps.pass_test.result }} == "ok"]]; then make package; fi
       - name: Archive production artifacts
