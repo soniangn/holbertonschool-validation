@@ -1,13 +1,16 @@
 ---
 name: release_drafter
 on:   # yamllint disable-line rule:truthy
+  push: 
+    branches:
+      - master
   pull_request:
     types: [opened, reopened, synchronize]
   
 permissions:
   contents: read
 
-jobs: 
+jobs:
   update_release_draft:
     permissions: 
       pull-requests: write
