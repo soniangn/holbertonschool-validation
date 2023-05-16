@@ -38,7 +38,6 @@ jobs:
         with:
           files: |
             Release.txt
-            awesome-website.zip
       - name: add content
         run: cat ./module3_task3/DEPLOY.md >> Release.txt
 
@@ -54,8 +53,6 @@ jobs:
         run: |
           cd module3_task3/ && go mod init module3_task3
           go get github.com/gorilla/mux && make test
-      - name: runs the api
-        run: cd module3_task3/ && make run
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
