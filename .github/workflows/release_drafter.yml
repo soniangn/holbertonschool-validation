@@ -1,6 +1,9 @@
 ---
 name: release_drafter
 on:   # yamllint disable-line rule:truthy
+  push: 
+    branches:
+      - master
   pull_request:
     types: [opened, reopened, synchronize]
   
