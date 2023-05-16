@@ -45,7 +45,8 @@ jobs:
       - name: add content
         run: cat ./module3_task3/DEPLOY.md >> Release.txt
 
-      - uses: release-drafter/release-drafter@v5
+      - name: release-drafter
+        uses: release-drafter/release-drafter@v5
         with:
         config-name: 1.0.1
 
