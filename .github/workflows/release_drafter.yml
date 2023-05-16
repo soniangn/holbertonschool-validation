@@ -10,11 +10,11 @@ permissions:
 jobs: 
   update_release_draft:
     permissions: 
-      contents: write
       pull-requests: write
     runs-on: ubuntu-22.04
     steps:
       - name: release drafter
         uses: release-drafter/release-drafter@v5
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
