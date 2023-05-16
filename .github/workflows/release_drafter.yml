@@ -7,7 +7,7 @@ on:   # yamllint disable-line rule:truthy
 permissions:
   contents: read
 
-jobs: 
+jobs:
   update_release_draft:
     permissions: 
       pull-requests: write
