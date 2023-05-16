@@ -51,4 +51,3 @@ jobs:
           files: |
             awesome-website.zip
             DEPLOY.md
-    
