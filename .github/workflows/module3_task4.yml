@@ -63,5 +63,3 @@ jobs:
             ## How to customize where the application logs are written?
             ## How to “quickly” verify that the application is running?
             ## How to create a release with the archive triggered by a tag?
-
-      
