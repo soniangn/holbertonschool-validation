@@ -2,6 +2,7 @@
 name: module3_task4
 on:   # yamllint disable-line rule:truthy
   pull_request:
+    types: [opened, reopened, synchronize]
   schedule:
     - cron: '0 0 * * *'   # Runs Everyday at 00:00
 
