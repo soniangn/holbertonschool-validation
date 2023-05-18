@@ -1,22 +1,21 @@
 ---
 name: release_drafter
+run-name: release_drafter
 on:   # yamllint disable-line rule:truthy
-  push: 
-    branches:
-      - master
+  push:
   pull_request:
     types: [opened, reopened, synchronize]
-  
+
 permissions:
   contents: read
 
 jobs:
   update_release_draft:
-    permissions: 
+    permissions:
+      contents: write
       pull-requests: write
     runs-on: ubuntu-22.04
     steps:
-      - name: release drafter
-        uses: release-drafter/release-drafter@v5
+      - uses: release-drafter/release-drafter@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
