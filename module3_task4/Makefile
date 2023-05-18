@@ -56,5 +56,5 @@ package: 	## produce a file awesome-website.zip
 
 .PHONY: lint
 lint:		## lint the files
-	@markdownlint -f ./module3_task2/README.md ./module3_task2/DEPLOY.md
+	@markdownlint -f ./module3_task4/README.md ./module3_task4/DEPLOY.md
 
