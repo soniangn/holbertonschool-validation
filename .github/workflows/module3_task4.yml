@@ -1,6 +1,11 @@
 ---
 name: module3_task4
 on:   # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+    tags:
+      - "1.0.1"
   pull_request:
     types: [opened, reopened, synchronize]
   schedule:
