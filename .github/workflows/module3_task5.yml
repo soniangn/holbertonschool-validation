@@ -67,6 +67,8 @@ jobs:
             --notes DEPLOY.md 2>/dev/null || echo "OK"
 
       - name: Deploy to Netlify
+        if: |
+          github.event_name == 'pull_request' || github.ref == 'refs/heads/master'
         uses: nwtgck/actions-netlify@v2.0
         with:
           publish-dir: 'module3_task5/dist'
