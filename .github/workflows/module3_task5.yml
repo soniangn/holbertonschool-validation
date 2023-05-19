@@ -66,7 +66,7 @@ jobs:
       - run: gh release create v1.0.1 --title "v1.0.1"
             --notes DEPLOY.md 2>/dev/null || echo "OK"
 
-      - name: Deploy to Netlify
+      - name: Deploy to Netlify host
         if: |
           github.event_name == 'pull_request' ||
           github.ref == 'refs/heads/master'
