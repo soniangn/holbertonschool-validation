@@ -3,7 +3,7 @@ name: module3_task1
 on:   # yamllint disable-line rule:truthy
   push:
   schedule:
-    - cron: '0 0 * * *'   # runs every day at 00:00
+    - cron: '0 0 * * *'   # Runs every day at 00:00
 
 jobs:
   build:
