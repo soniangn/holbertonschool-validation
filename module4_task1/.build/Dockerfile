@@ -1,5 +1,5 @@
 # base image to use
-FROM golang:1.15.8-buster
+FROM golang:latest
 
 # creates a working directory inside the Docker image
 WORKDIR /module4_task1
