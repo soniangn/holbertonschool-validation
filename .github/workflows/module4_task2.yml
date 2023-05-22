@@ -19,6 +19,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: ''
+      - name: run setup.sh
+        run: ./module4_task2/setup.sh
 
       - name: test & validate
         run: |
@@ -30,7 +32,7 @@ jobs:
           make integration-tests
           make build-docker
           make docker-tests
-      
+
       - name: create image
         run: cd module4_task2/ && make build-docker
 
