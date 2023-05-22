@@ -4,7 +4,7 @@ HUGO_VERSION=0.84.0
 
 .PHONY: build
 build:		## generate website from markdown and configuration files in the /dist directory
-	@docker run --volume ${GITHUB_WORKSPACE}/module4_task0/ golang:1.15.8-buster go build
+	@docker run --volume ${GITHUB_WORKSPACE}/module4_task0/ golang:latest go build
 	@hugo -c $(DESTDIR)
 
 .PHONY: clean
@@ -45,11 +45,11 @@ test:	 	## run tests
 
 .PHONY: unit-tests
 unit-tests: ## run unit tests
-	@docker run --volume ${GITHUB_WORKSPACE}/module4_task0/:/go golang:1.15.8-buster ls && go test -v -short -coverprofile=coverage-units.out
+	@docker run --volume ${GITHUB_WORKSPACE}/module4_task0/:/go golang:latest ls && go test -v -short -coverprofile=coverage-units.out
 
 .PHONY: integration-tests
 integration-tests:	## run integration tests
-	@docker run --volume ${GITHUB_WORKSPACE}/module4_task0/:/go golang:1.15.8-buster ls && go test -v -tags=integration -coverprofile=coverage-integrations.out
+	@docker run --volume ${GITHUB_WORKSPACE}/module4_task0/:/go golang:latest ls && go test -v -tags=integration -coverprofile=coverage-integrations.out
 
 .PHONY: package
 package: 	## produce a file awesome-website.zip 
