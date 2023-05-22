@@ -1,6 +1,8 @@
 # base image to use
 FROM golang:1.15.8-alpine
 
+SHELL ["/bin/bash", "-l", "-c", "-o", "pipefail"]
+
 # creates a working directory inside the Docker image
 WORKDIR /module4_task2
 
