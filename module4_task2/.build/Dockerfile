@@ -6,6 +6,9 @@ SHELL ["/bin/sh", "-l", "-c", "-o", "pipefail"]
 # creates a working directory inside the Docker image
 WORKDIR /module4_task2
 
+# Install all tools
+RUN apk add --no-cache curl
+
 # Install Hugo
 RUN curl -L https://github.com/gohugoio/hugo/releases/download/v0.84.0/hugo_extended_0.84.0_Linux-64bit.deb -o hugo.deb \
     && apt-get install -y ./hugo.deb
