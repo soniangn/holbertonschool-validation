@@ -21,3 +21,5 @@
 * `make check`: check the markdown's lint
 * `make validate`: validate W3C
 * `make build-docker`: build the docker image
+* `make docker-tests`: test the dockerfile using Google container-structure-test
+* `make lint`: lint the dockerfile with Hadolint
