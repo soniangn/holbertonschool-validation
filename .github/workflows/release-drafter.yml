@@ -1,4 +1,5 @@
-name-template: 'v$RESOLVED_VERSION 🌈'
+---
+name-template: 'v$RESOLVED_VERSION🌈'
 tag-template: 'v$RESOLVED_VERSION'
 categories:
   - title: '🚀 Features'
@@ -15,7 +16,7 @@ categories:
   - title: '🎉 Published on'
     label: 'host'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-change-title-escapes: '\<*_&' 
+change-title-escapes: '\<*_&'
 version-resolver:
   major:
     labels:
