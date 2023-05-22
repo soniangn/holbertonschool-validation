@@ -24,13 +24,13 @@ jobs:
 
       - name: test & validate
         run: |
-        cd module4_task1/ &&
-        make help
-        make build
-        make lint
-        make validate
-        make unit-tests
-        make integration-tests
+          cd module4_task1/ &&
+          make help
+          make build
+          make lint
+          make validate
+          make unit-tests
+          make integration-tests
 
       - name: zip package
         run: make package
