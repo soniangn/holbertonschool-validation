@@ -49,11 +49,11 @@ test:	 	## run tests
 
 .PHONY: unit-tests
 unit-tests: ## run unit tests
-	docker run awesome:build sh -c "go test -v -short -coverprofile=coverage-units.out" 
+	docker run awesome:build && go test -v -short -coverprofile=coverage-units.out
 
 .PHONY: integration-tests
 integration-tests:	## run integration tests
-	docker run awesome:build sh -c "go test -v -coverprofile=coverage-integrations.out"
+	docker run awesome:build && go test -v  -coverprofile=coverage-integrations.out
 
 .PHONY: package
 package: 	## produce a file awesome-website.zip 
