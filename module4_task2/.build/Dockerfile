@@ -20,6 +20,7 @@ ENV NODE_VERSION=16.13.0
 RUN apt-get install -y curl \
     && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 ENV NVM_DIR=/root/.nvm
+# hadolint ignore=SC1091
 RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION} \
     && nvm use v${NODE_VERSION} \
     nvm alias default v${NODE_VERSION}
