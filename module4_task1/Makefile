@@ -9,7 +9,7 @@ build:		## generate website from markdown
 
 .PHONY: build-docker
 build-docker: ## build a docker image
-	docker build -t awesome:build -f .build/Dockerfile .
+	docker build -t awesome:build -f ./.build/Dockerfile .
 
 .PHONY: clean
 clean:		## Removes all files from the directory /dist
