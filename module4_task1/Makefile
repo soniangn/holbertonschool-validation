@@ -3,13 +3,13 @@ DESTDIR=dist
 
 .PHONY: build
 build:		## generate website from markdown
-	@docker run --rm -v "$PWD":./module4_task1/app -w ./module4_task1/app awesome:build go mod tidy
-	@docker run --rm -v "$PWD":./module4_task1/app -w ./module4_task1/app awesome:build hugo
-	@docker run --rm -v "$PWD":./module4_task1/app -w ./module4_task1/app awesome:build go build -o awesome-api
+	docker run --rm -v "$PWD":./module4_task1/app -w ./module4_task1/app awesome:build go mod tidy
+	docker run --rm -v "$PWD":./module4_task1/app -w ./module4_task1/app awesome:build hugo
+	docker run --rm -v "$PWD":./module4_task1/app -w ./module4_task1/app awesome:build go build -o awesome-api
 
 .PHONY: build-docker
 build-docker: ## build a docker image
-	@docker build -t awesome:build -f .build/Dockerfile
+	docker build -t awesome:build -f .build/Dockerfile .
 
 .PHONY: clean
 clean:		## Removes all files from the directory /dist
