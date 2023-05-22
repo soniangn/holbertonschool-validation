@@ -1,6 +1,6 @@
 ---
-name: release_drafter
-run-name: release_drafter
+name: release-drafter
+run-name: release-drafter
 on:   # yamllint disable-line rule:truthy
   push:
   pull_request:   # on PR
