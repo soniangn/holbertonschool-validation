@@ -9,7 +9,7 @@ on:   # yamllint disable-line rule:truthy
   pull_request:
     types: [opened, reopened, synchronize]
   schedule:
-    - cron: '0 0 * * *'   # Runs Everyday at 00:00
+    - cron: '0 0 * * *'   # Runs everyday at 00:00
 
 jobs:
   build:
@@ -66,10 +66,7 @@ jobs:
       - run: gh release create v1.0.1 --title "v1.0.1"
             --notes DEPLOY.md 2>/dev/null || echo "OK"
 
-      - name: Deploy to Netlify
-        if: |
-          github.event_name == 'pull_request' ||
-          github.ref == 'refs/heads/master'
+      - name: Deploy to Netlify host
         uses: nwtgck/actions-netlify@v2.0
         with:
           publish-dir: 'module3_task5/dist'
