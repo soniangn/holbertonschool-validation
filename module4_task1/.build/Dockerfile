@@ -12,7 +12,7 @@ RUN apt install ./hugo.deb
 RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
 
 # Install npm
-RUN sudo apt install npm
+RUN apt install npm
 
 # install markdownlint
 RUN npm install -g markdownlint-cli
