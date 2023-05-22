@@ -29,7 +29,8 @@ jobs:
         make build
         make lint
         make validate
-        make test
+        make unit-tests
+        make integration-tests
 
       - name: zip package
         run: make package
