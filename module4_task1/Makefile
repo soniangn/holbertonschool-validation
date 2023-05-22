@@ -3,9 +3,9 @@ DESTDIR=dist
 
 .PHONY: build
 build:		## generate website from markdown
-	docker run --rm -v "$PWD":/module4_task1/myapp -w /module4_task1/myapp awesome:build go mod tidy
-	docker run --rm -v "$PWD":/module4_task1/myapp -w /module4_task1/myapp awesome:build hugo
-	docker run --rm -v "$PWD":/module4_task1/myapp -w /module4_task1/myapp awesome:build go build -o awesome-api
+	docker run --rm -v "$(PWD)":/module4_task1 -w /module4_task1 awesome:build go mod tidy
+	docker run --rm -v "$(PWD)":/module4_task1 -w /module4_task1 awesome:build hugo
+	docker run --rm -v "$(PWD)":/module4_task1 -w /module4_task1 awesome:build go build -o awesome-api
 
 .PHONY: build-docker
 build-docker: ## build a docker image
