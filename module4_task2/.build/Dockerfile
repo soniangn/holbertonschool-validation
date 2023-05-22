@@ -12,7 +12,7 @@ WORKDIR /module4_task2
 RUN apk add --no-cache curl nodejs npm
 
 # Install Hugo
-# hadolint ignore=DL3018
+# hadolint ignore=DL3018,DL3059
 RUN apk add --no-cache hugo
 
 # Install golangci-lint
