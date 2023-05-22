@@ -61,5 +61,5 @@ package: 	## produce a file awesome-website.zip
 
 .PHONY: lint
 lint:		## lint the files
-	docker run --rm -i hadolint/hadolint < ./.build/Dockerfile
+	docker run --rm -i hadolint/hadolint:latest-alpine < ./.build/Dockerfile
 	docker run awesome:build sh -c "markdownlint -f ./README.md ./DEPLOY.md"
