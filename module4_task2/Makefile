@@ -53,7 +53,7 @@ integration-tests:	## run integration tests
 .PHONY: docker-tests
 docker-tests: ## use container-structure-test
 	docker run --rm -v "$(PWD)":/module4_task2 -w /module4_task2 awesome:build container-structure-test test --image awesome:build \
-	--config cst.yml
+	--config .build/cst.yml
 
 .PHONY: package
 package: 	## produce a file awesome-website.zip 
