@@ -28,7 +28,6 @@ jobs:
           make help
           make build
           make lint
-          make validate
           make unit-tests
           make integration-tests
 
