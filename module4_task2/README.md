@@ -20,3 +20,4 @@
 * `make help`: Show the help usage
 * `make check`: check the markdown's lint
 * `make validate`: validate W3C
+* `make build-docker`: build the docker image
