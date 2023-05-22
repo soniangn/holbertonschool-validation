@@ -15,7 +15,7 @@ RUN curl -osSfL "https://raw.githubusercontent.com/golangci/golangci-lint/master
 # Install npm
 ENV NODE_VERSION=16.13.0
 # hadolint ignore=DL3008,DL3015
-RUN apt-get install -y curl
+RUN apt-get install -y curl \
     && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 ENV NVM_DIR=/root/.nvm
 RUN . "$NVM_DIR/nvm.sh" && nvm install ${NODE_VERSION} \
