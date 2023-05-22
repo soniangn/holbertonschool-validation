@@ -31,9 +31,6 @@ jobs:
           make unit-tests
           make integration-tests
 
-      - name: zip package
-        run: make package
-
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
