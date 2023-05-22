@@ -5,10 +5,11 @@ FROM golang:1.15.8-alpine
 WORKDIR /module4_task2
 
 # Install Hugo
-RUN curl -oL https://github.com/gohugoio/hugo/releases/download/v0.84.0/hugo_extended_0.84.0_Linux-64bit.deb -o hugo.deb
-RUN apt-get install ./hugo.deb
+RUN curl -oL https://github.com/gohugoio/hugo/releases/download/v0.84.0/hugo_extended_0.84.0_Linux-64bit.deb -o hugo.deb \
+    && apt-get -y install --no-install-recommends ./hugo.deb
 
 # Install golangci-lint
+# hadolint ignore=SC2046,DL4006
 RUN curl -osSfL "https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh" | sh -s -- -b $(go env GOPATH)/bin
 
 # Install npm
