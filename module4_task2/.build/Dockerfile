@@ -1,7 +1,7 @@
 # base image to use
 FROM golang:1.15.8-alpine
 
-SHELL ["/bin/bash", "-l", "-c", "-o", "pipefail"]
+SHELL ["/bin/sh", "-l", "-c", "-o", "pipefail"]
 
 # creates a working directory inside the Docker image
 WORKDIR /module4_task2
@@ -12,7 +12,7 @@ RUN curl -L https://github.com/gohugoio/hugo/releases/download/v0.84.0/hugo_exte
 
 # Install golangci-lint
 # hadolint ignore=SC2046,DL4006
-RUN curl -osSfL "https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh" | sh -s -- -b $(go env GOPATH)/bin
+RUN curl -sSfL "https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh" | sh -s -- -b $(go env GOPATH)/bin
 
 # Install npm
 ENV NODE_VERSION=16.13.0
