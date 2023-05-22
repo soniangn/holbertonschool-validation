@@ -24,6 +24,7 @@ jobs:
 
       - name: test & validate
         run: |
+        cd module4_task1/ &&
         make help
         make build
         make lint
