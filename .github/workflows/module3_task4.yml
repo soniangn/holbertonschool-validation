@@ -9,7 +9,7 @@ on:   # yamllint disable-line rule:truthy
   pull_request:
     types: [opened, reopened, synchronize]
   schedule:
-    - cron: '0 0 * * *'   # Runs Everyday at 00:00
+    - cron: '0 0 * * *'   # Runs everyday at 00:00
 
 jobs:
   build:
