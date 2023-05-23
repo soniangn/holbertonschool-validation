@@ -8,7 +8,7 @@ commandTests:
   - name: "check golangci-lint installation"
     command: "which"
     args: ["golangci-lint"]
-    expectedOutput: ["/root/workspace/bin/golangci-lint"]
+    expectedOutput: ["/bin/golangci-lint"]
   - name: "check hugo installation"
     command: "which"
     args: ["hugo"]
