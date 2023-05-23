@@ -4,13 +4,11 @@ schemaVersion: 2.0.0
 metadataTest:
   workdir: "/module4_task2"
 
-fileExistenceTests:
-  - name: 'check existence of golangci-lint'
-    path: '/root/workspace/bin/golangci-lint'
-    shouldExist: true
-    permissions: '-rw-r--r--'
-
 commandTests:
+  - name: "check golangci-lint installation"
+    command: "which"
+    args: ["golangci-lint"]
+    expectedOutput: ["/root/workspace/bin/golangci-lint"]
   - name: "check hugo installation"
     command: "which"
     args: ["hugo"]
