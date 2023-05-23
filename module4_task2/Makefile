@@ -52,7 +52,7 @@ integration-tests:	## run integration tests
 
 .PHONY: docker-tests
 docker-tests: ## use container-structure-test
-	docker run --rm "${PWD}":/module4_task2 -v /var/run/docker.sock:/var/run/docker.sock -w /module4_task2 awesome:build container-structure-test test --image awesome:build \
+	docker run --rm -v "${PWD}":/module4_task2 -v /var/run/docker.sock:/var/run/docker.sock -w /module4_task2 awesome:build container-structure-test test --image awesome:build \
 	--config .build/cst.yml
 
 .PHONY: package
