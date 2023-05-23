@@ -20,7 +20,7 @@ RUN apk add --no-cache hugo
 RUN curl -sSfL "https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh" | sh -s -- -b $(go env GOPATH)/bin
 
 # Install container-structure-test
-RUN curl -LO https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64 && \
+RUN curl -LO "https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64" && \
 chmod +x container-structure-test-linux-amd64 && mkdir -p $HOME/bin && export PATH=$PATH:$HOME/bin && \
 mv container-structure-test-linux-amd64 $HOME/bin/container-structure-test
 
