@@ -21,9 +21,8 @@ RUN curl -sSfL "https://raw.githubusercontent.com/golangci/golangci-lint/master/
 
 # Install container-structure-test
 # hadolint ignore=SC2086
-RUN curl -LO "https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64" && \
-chmod +x container-structure-test-linux-amd64 && mkdir -p $HOME/bin && export PATH=$PATH:$HOME/bin && \
-mv container-structure-test-linux-amd64 $HOME/bin/container-structure-test
+RUN curl -sSfL -o /usr/local/bin/container-structure-test https://storage.googleapis.com/container-structure-test/latest/container-structure-test-linux-amd64 \
+    && chmod +x /usr/local/bin/container-structure-test
 
 # install markdownlint
 RUN npm install -g markdownlint-cli@0.34.0
