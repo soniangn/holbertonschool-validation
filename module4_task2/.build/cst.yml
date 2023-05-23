@@ -20,6 +20,6 @@ commandTests:
     args: ["npm"]
     expectedOutput: ["/usr/bin/npm"]
   - name: "checks markdownlint installation"
-    commands: "which"
+    command: "which"
     args: ["markdownlint"]
     expectedOutput: ["/usr/bin/markdownlint"]
